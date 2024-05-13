@@ -8,4 +8,7 @@ public class AppConstants {
     public static final String T_SHIRT = "T-Shirt";
     public static final String WINTER_JACKET = "Winter Jacket";
     public static final String MITTEN = "Mitten";
+
+    public static final String DA_VINCI_CODE = "Da Vinci Code";
+    public static final String SHERLOCK_HOLMES = "Sherlock Holmes";
 }
