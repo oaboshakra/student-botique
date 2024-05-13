@@ -5,11 +5,13 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+import com.studentbotique.constants.AppConstants;
 import com.studentbotique.discount.StudentUser;
 import com.studentbotique.discount.Wallet;
 import com.studentbotique.discount.IStudent;
 import com.studentbotique.discount.IWallet;
-import com.studentbotique.constants.AppConstants;
+import com.studentbotique.discount.DiscountCalculator;
+import com.studentbotique.discount.Membership;
 
 public class StudentUserTest {
     @Test
