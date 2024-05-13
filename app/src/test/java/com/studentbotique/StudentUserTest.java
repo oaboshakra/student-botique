@@ -45,6 +45,18 @@ public class StudentUserTest {
         assertEquals(30, (int) student.calculateDiscount());
     }
 
+    @Test
+    public void testStudentWithPlatinumMembership() {
+        StudentUser student = new StudentUser("Random", "Student");
+        IWallet wallet = new Wallet(200);
+        student.setWallet(wallet);
+
+        DiscountCalculator goldDiscountCalculator = new DiscountCalculator(AppConstants.PLATINUM_RATE);
+        Membership gold = new Membership(goldDiscountCalculator);
+        student.setMembership(gold);
+        assertEquals(40, (int) student.calculateDiscount());
+    }
+
 }
 
 
