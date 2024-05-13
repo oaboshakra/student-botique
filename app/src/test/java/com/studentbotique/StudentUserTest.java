@@ -53,9 +53,9 @@ public class StudentUserTest {
         IWallet wallet = new Wallet(200);
         student.setWallet(wallet);
 
-        DiscountCalculator goldDiscountCalculator = new DiscountCalculator(AppConstants.PLATINUM_RATE);
-        Membership gold = new Membership(goldDiscountCalculator);
-        student.setMembership(gold);
+        DiscountCalculator platinumDiscountCalculator = new DiscountCalculator(AppConstants.PLATINUM_RATE);
+        Membership platinum = new Membership(platinumDiscountCalculator);
+        student.setMembership(platinum);
         assertEquals(40, (int) student.calculateDiscount());
     }
 
