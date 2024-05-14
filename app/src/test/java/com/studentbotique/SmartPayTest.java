@@ -32,4 +32,27 @@ public class SmartPayTest {
         assertEquals(4500, (int)googlePay.getCurrentBalance());
     }
 
+    @Test
+    public void testGooglePayUnsuccessful() {
+        IGooglePay googlePay = new GooglePay(1000);
+        assertFalse(googlePay.pay(2000));
+        assertEquals(1000, (int)googlePay.getCurrentBalance());
+    }
+
+    @Test
+    public void testSchoolPaymentSuccessful() {
+        SmartPay smartPay = new SmartPay(null);
+        smartPay.setSchoolBalance(3000);
+        assertTrue(smartPay.pay(PaymentType.SchoolPayment, 500));
+        assertEquals(2500, (int)smartPay.getSchoolBalance());
+    }
+
+    @Test
+    public void testSchoolPaymentUnsuccessful() {
+        SmartPay smartPay = new SmartPay(null);
+        smartPay.setSchoolBalance(1000);
+        assertFalse(smartPay.pay(PaymentType.SchoolPayment, 2000));
+        assertEquals(1000, (int)smartPay.getSchoolBalance());
+    }
+
 }
