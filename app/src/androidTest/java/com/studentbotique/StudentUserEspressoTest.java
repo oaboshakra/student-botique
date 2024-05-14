@@ -39,4 +39,14 @@ public class StudentUserEspressoTest {
         onView(withId(R.id.totalDiscountLabel)).check(matches(withText("$30.0")));
     }
 
+    @Test
+    public void testStudentWithPlatinumMembership() {
+        activityScenario = ActivityScenario.launch(LandingActivity.class);
+        onView(withId(R.id.depositBox)).perform(typeText("200"));
+        onView(withId(R.id.membershipSpinner)).perform(click());
+        onData(is("Platinum"))).perform(click());
+        onView(withId(R.id.calculateDiscountButton)).perform(click());
+        onView(withId(R.id.totalDiscountLabel)).check(matches(withText("$40.0")));
+    }
+
 }
