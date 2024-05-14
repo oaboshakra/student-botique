@@ -7,6 +7,8 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 
 import androidx.test.core.app.ActivityScenario;
@@ -24,7 +26,7 @@ public class StudentUserEspressoTest {
         activityScenario = ActivityScenario.launch(LandingActivity.class);
         onView(withId(R.id.depositBox)).perform(typeText("200"));
         onView(withId(R.id.membershipSpinner)).perform(click());
-        onData(is("Silver"))).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("Silver"))).perform(click());
         onView(withId(R.id.calculateDiscountButton)).perform(click());
         onView(withId(R.id.totalDiscountLabel)).check(matches(withText("$20.0")));
     }
@@ -34,7 +36,7 @@ public class StudentUserEspressoTest {
         activityScenario = ActivityScenario.launch(LandingActivity.class);
         onView(withId(R.id.depositBox)).perform(typeText("200"));
         onView(withId(R.id.membershipSpinner)).perform(click());
-        onData((is("Gold"))).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("Gold"))).perform(click());
         onView(withId(R.id.calculateDiscountButton)).perform(click());
         onView(withId(R.id.totalDiscountLabel)).check(matches(withText("$30.0")));
     }
@@ -44,7 +46,7 @@ public class StudentUserEspressoTest {
         activityScenario = ActivityScenario.launch(LandingActivity.class);
         onView(withId(R.id.depositBox)).perform(typeText("200"));
         onView(withId(R.id.membershipSpinner)).perform(click());
-        onData(is("Platinum"))).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("Platinum"))).perform(click());
         onView(withId(R.id.calculateDiscountButton)).perform(click());
         onView(withId(R.id.totalDiscountLabel)).check(matches(withText("$40.0")));
     }
