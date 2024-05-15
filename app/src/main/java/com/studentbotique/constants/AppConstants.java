@@ -34,4 +34,7 @@ public class AppConstants {
     public static final String BUY_BOOK = "Buy Book";
     public static final String CASH_IN = "Cash In";
     public static final String TRANSFER = "Transfer";
+
+    public static final String PAYMENT_SUCCESSFUL = "Payment successful";
+    public static final String PAYMENT_FAILED = "Payment failed";
 }
