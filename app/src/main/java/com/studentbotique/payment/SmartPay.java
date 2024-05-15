@@ -26,6 +26,13 @@ public class SmartPay implements ISchoolCard {
                 if (paid) {
                     paidAmount += amount;
                 }
+                return paid;
+            } else {
+                if (balance >= amount) {
+                    balance -= amount;
+                    paidAmount += amount;
+                    return true;
+                }
             }
         } else if (paymentType.equals(PaymentType.GooglePayment)) {
             if (adapter != null) {

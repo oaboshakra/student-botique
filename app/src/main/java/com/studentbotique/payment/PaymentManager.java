@@ -55,5 +55,4 @@ public class PaymentManager {
         }
         return 0;
     }
-    
 }
